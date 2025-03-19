@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .certification {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .reactions button {
+            margin-right: 5px;
+            padding: 5px 10px;
+            font-size: 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .like { background: #007bff; color: #fff; }
+        .view { background: #28a745; color: #fff; }
+        .comments {
+            margin-top: 15px;
+        }
+        .comment-box {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .comment-list {
+            margin-top: 10px;
+        }
+        .comment {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .post-btn {
+            margin-top: 5px;
+            padding: 8px 15px;
+            font-size: 14px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .post-btn:hover {
+            background-color: #0056b3;
+        }
+        hr {
+            margin: 40px 0;
+            border: 1px solid #ccc;
+        }
+        .experience {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h2>My Certifications</h2>
+    <div class="container">
+        <div class="certification">
+            <h3>Introduction To Artificial Intelligence</h3>
+            <p>Issued by: Linked In Learning</p>
+            <div class="reactions">
+                <button class="like" onclick="react(this, 'like')">👍 Like <span>0</span></button>
+                <button class="view" onclick="viewCertificate('intro.pdf')">📜 View</button>
+         
+        </div>
+        <div class="certification">
+            <h3>Carrer Essentials In GenAI</h3>
+            <p>Issued by: Linked In Learning</p>
+            <div class="reactions">
+                <button class="like" onclick="react(this, 'like')">👍 Like <span>0</span></button>
+                <button class="view" onclick="viewCertificate('carrer essentials.pdf')">📜 View</button>
+            </div>
+          
+        </div>
+        <div class="certification">
+            <h3>Data Analytics and Visualization and Job Simulation</h3>
+            <p>Issued by: Accenture</p>
+            <div class="reactions">
+                <button class="like" onclick="react(this, 'like')">👍 Like <span>0</span></button>
+                <button class="view" onclick="viewCertificate('forage certificate.pdf')">📜 View</button>
+            </div>
+          
+        </div>
+        <div class="certification">
+            <h3>Build a Computer Vision app With Azure Cognitive Services</h3>
+            <p>Issued by: Coursera & Microsoft</p>
+            <div class="reactions">
+                <button class="like" onclick="react(this, 'like')">👍 Like <span>0</span></button>
+                <button class="view" onclick="viewCertificate('coursera.pdf')">📜 View</button>
+            </div>
+    
+    </div>
+
+    <hr>
+
+    <h2>Experience</h2>
+    <div class="experience">
+        <h3>Meachine Learning  Intern</h3>
+        <p>Company: Barath Intern</p>
+        <p>Duration: October 2023 - November 2023</p>
+        <p>Responsibilities: Worked on machine learning models, developed data pipelines, and optimized algorithms.</p>
+    </div>
+    
+    <div class="experience">
+        <h3>Ai Voice Translator(Hackathon Project)</h3>
+        <p>IIIT BANGLORE</p>
+        <p>Built an Ai Voice Translator that takes the voice input and processes it and translate that voice into the other language you want.</p>
+    </div>
+    
+    <div class="experience">
+        <h3>comming soon/h3>
+        <p>comming soon</p>
+        <p>Duration:</p>
+        <p>Responsibilities: Worked on machine learning models, developed data pipelines, and optimized algorithms.</p>
+    </div>
+    <script>
+        function react(button, type) {
+            let countSpan = button.querySelector("span");
+            let count = parseInt(countSpan.innerText);
+            countSpan.innerText = count + 1;
+        }
+
+        function addComment(button) {
+            let commentBox = button.previousElementSibling;
+            let commentText = commentBox.value.trim();
+            if (commentText !== "") {
+                let commentList = button.nextElementSibling;
+                let commentDiv = document.createElement("div");
+                commentDiv.classList.add("comment");
+                commentDiv.innerText = commentText;
+                commentList.appendChild(commentDiv);
+                commentBox.value = "";
+            }
+        }
+
+        function viewCertificate(certFile) {
+            window.open(certFile, '_blank');
+        }
+    </script>
+</body>
+</html>

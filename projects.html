@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2e;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+        header {
+            background: #333;
+            padding: 1rem;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 20px;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .projects-container {
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 120px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            text-align: center;
+            padding: 20px;
+        }
+        .project-card {
+            background: #2a2a3c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.7);
+        }
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .project-card a {
+            display: block;
+            padding: 12px;
+            background: #4a90e2;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .github-link, .certifications-link {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .github-link a, .certifications-link a {
+            display: inline-block;
+            padding: 14px 24px;
+            background: #ff9800;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .certifications-link a {
+            background: #4a90e2;
+        }
+        .footer {
+            width: 100%;
+            background: #333;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 30px;
+        }
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+                align-items: center;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            .projects-container {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuIcon = document.querySelector(".menu-icon");
+            const navList = document.querySelector("nav ul");
+            menuIcon.addEventListener("click", function() {
+                navList.classList.toggle("active");
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <span class="menu-icon">&#9776;</span>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="projects-container">
+        <h2>My Work</h2>
+        <div class="project-card">
+            <img src="project1.jpeg.png" alt="Project 1">
+            <h3>AI Automation Bot</h3>
+            <p>AI automation bot that performs tasks based on prompts.</p>
+            <a href="#">View on GitHub</a>
+        </div>
+        <div class="project-card">
+            <img src="spotify.png" alt="Project 2">
+            <h3>spotify-clone</h3>
+            <p>made a spotify clone project using html css and java script</p>
+            <a href="#">View on GitHub</a>
+        </div>
+    </section>
+    <div class="github-link">
+        <a href="https://github.com/vasureddyuppunuri">See all my projects on GitHub</a>
+    </div>
+    <div class="certifications-link">
+        <a href="certifications.html">See my Certifications & Experience - Click Here</a>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

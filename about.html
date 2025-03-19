@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #1e1e2e;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            background: #333;
+            padding: 0.8rem;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-align: center;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        #about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 900px;
+            margin-top: 100px;
+            gap: 20px;
+        }
+        .intro, .skills-container {
+            background: #2a2a3c;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+        .intro p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+        .skill-box {
+            background: #1e1e2e;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .skill-box:hover {
+            transform: scale(1.1);
+            background-color: #3a3a4f;
+        }
+        @media (max-width: 600px) {
+            .menu-icon {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                text-align: center;
+                margin: 10px 0;
+            }
+            #about {
+                margin-top: 120px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuIcon = document.querySelector(".menu-icon");
+            const navList = document.querySelector("nav ul");
+            
+            menuIcon.addEventListener("click", function() {
+                navList.classList.toggle("active");
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <span class="menu-icon">&#9776;</span>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Project</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="about">
+        <div class="intro">
+            <h1>About Me</h1>
+            <p>Hi, I'm Vasu Reddy Uppunuri, a Machine Learning Engineer specializing in AI-driven solutions. 
+                I have expertise in ML, deep learning, data analysis, and model deployment.</p>
+            <button><a href="contact.html">Get In Touch</a></button>
+        </div>
+        <div class="skills-container">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill-box">HTML</div>
+                <div class="skill-box">CSS</div>
+                <div class="skill-box">JavaScript</div>
+                <div class="skill-box">Python</div>
+                <div class="skill-box">PyTorch</div>
+                <div class="skill-box">SQL</div>
+                <div class="skill-box">Linear Algebra</div>
+                <div class="skill-box">MongoDB</div>
+                <div class="skill-box">Shell</div>
+                <div class="skill-box">R</div>
+                <div class="skill-box">Flask</div>
+                <div class="skill-box">Git</div>
+                <div class="skill-box">GitHub</div>
+                <div class="skill-box">CI/CD</div>
+                <div class="skill-box">NLP</div>
+                <div class="skill-box">AWS</div>
+                <div class="skill-box">OpenCV</div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
